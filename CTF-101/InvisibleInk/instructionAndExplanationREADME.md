@@ -1,5 +1,7 @@
 # Invisible Ink
 
+Expose hidden vulnerabilities in the web application.
+
 ## Objective
 
 Retrive a flag throuh a POST request manipulating the value through a vulnerability
