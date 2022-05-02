@@ -24,11 +24,11 @@ This article has a similar case that could be helpful for us
 
 ## Solution
 
-Reading this article: https://davidhamann.de/2020/04/05/exploiting-python-pickle/ could help us to understand how to pass the correct string to the form and run bash command on the target amachine.
+Reading the article above could help us to understand how to pass the correct string to the form and run bash command on the target amachine.
 
 I made a small script script.py that could trasform all the command serializing them.
 
-This are the steps to take
+These are the steps to take
 
 ```
 python3.9 script.py 'ls'
