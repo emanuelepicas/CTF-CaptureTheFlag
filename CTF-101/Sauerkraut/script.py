@@ -24,7 +24,5 @@ string64 = base64.urlsafe_b64encode(pickled)
 print(f"string not base64{pickled}")
 print(f"string base64 {string64}")
 
-#command64pickled = PICKLEREQUEST.command64(cmdsplit) 
-#print (f"command: {command64pickled}")
 
 
