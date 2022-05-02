@@ -1,4 +1,6 @@
-# Objective
+# Invisible Ink
+
+## Objective
 
 Retrive a flag throuh a POST request manipulating the value through a vulnerability
 
