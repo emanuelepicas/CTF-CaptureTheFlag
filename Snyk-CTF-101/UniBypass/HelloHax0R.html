@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snyk CTF</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+    </style>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: limegreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        * {
+            font-family: 'Space mono', monospace;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input::placeholder {
+            color: limegreen;
+        }
+
+        input:focus {
+            outline: none;
+            color: red;
+        }
+
+        input {
+            margin: 0 auto;
+            border: 1px solid limegreen;
+            border-radius: 5px;
+            background-color: transparent;
+            height: 2em;
+        }
+
+        label {
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            color: limegreen;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            border: 2px solid white;
+            background-color: white;
+            color: red;
+            cursor: not-allowed;
+        }
+
+        input[type="button"]{
+            color:limegreen;
+        }
+        
+        #submit {
+            margin: 0 auto;
+        }
+
+        #logo {
+            height: 40vh;
+            filter: invert(100%);
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            document.querySelector('#submit').addEventListener('click', submit);
+        }
+
+        async function submit(){
+            const file_name = document.querySelector('#file_name').value;
+            const response = await fetch('/', {
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify({file_name})
+            })
+            const responseData = await response.json();
+            alert(responseData.response);
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <img id="logo" src="https://cdn.freebiesupply.com/logos/large/2x/snyk-logo-png-transparent.png" alt="no internet?"/>
+    <div id="title">
+        <h1>Hello Hax0R</h1>
+    </div>
+    <div id="content">
+        <p>Ask me for the flag and be done with it</p>
+        <form action="/" method="POST">
+            <label for="file_name">
+                file_name:
+                <input id="file_name" type="text" name="file_name" placeholder="...."/>
+            </label>
+            <br>
+            <input id="submit" type="button" value="Are you ready for it?"/>
+        </form>
+    </div>
+</div>
+<!--T25jZSBJIHdhcyBwYXJzaW5nLXllYXJzLW9sZCBteSBtb21teSB0b2xkIG1lCm1ha2Ugc3VyZSB5b3Ugd29yayB3LyBweXRob24gb3IgeW91J2xsIGdldCBsb25lbHkK-->
+</body>
+</html>
