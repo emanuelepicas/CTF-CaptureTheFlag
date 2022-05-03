@@ -4,7 +4,7 @@ Expose hidden vulnerabilities in the web application.
 
 ## Objective
 
-Retrive a flag throuh a POST request manipulating the value through a vulnerability
+Retrieve a flag through a POST request manipulating the value through a vulnerability
 
 # Resources to install
 
@@ -76,7 +76,7 @@ If we take a look at the file index.js, we can see that the script will output t
 
 We need to manipulate the object to retrive the flag using a vulnerabilities that we can find from the previous command: "snyk monitor"
 
-A good one could be prototipe pollution:
+A good one could be prototype pollution:
 
 https://security.snyk.io/vuln/SNYK-JS-LODASH-567746
 
