@@ -4,8 +4,8 @@ If you wanna be my parser, you gotta get with my friend.
 
 ## Objective
 
-Just from the title we can assume, that there is a possible form to fill and bypass.
-The languages are python and JavaScript, so I could assume that there will be an intresting script embedded, possibly, into the html.
+Just from the title, we can assume, that there is a possible form to fill and bypass.
+The languages are python and JavaScript, so I could assume that there will be an interesting script embedded, possibly, into the HTML.
 
 
 ## Resources
@@ -17,7 +17,7 @@ The languages are python and JavaScript, so I could assume that there will be an
 
 ## Solution
 
-We can retrive the HTML page with the curl command as follow below:
+We can retrieve the HTML page with the curl command as follows below:
 
 ```
 $curl -X GET 35.211.91.235:8000 >> HelloHax0R.html                      
@@ -29,7 +29,7 @@ $curl -X GET 35.211.91.235:8000 >> HelloHax0R.html
 100  3394  100  3394    0     0  13872      0 --:--:-- --:--:-- --:--:-- 13909
 
 
-If we take a look into the file we can find two intresting hints.
+If we take a look into the file, we can find two interesting hints.
 The first is about the Javascript code that handles the form text to fill.
 
 This script indicates us, that there is a logic regarding the  fetching of the file.
@@ -57,7 +57,7 @@ This script indicates us, that there is a logic regarding the  fetching of the f
 
 ```
 
-In this possible solution I will go through curl command and not the form text.
+In this possible solution, I will go through curl command and not the form text.
 This is the command that I will use to exploit the form, changing only the value of *file_name*.
 
 
@@ -94,11 +94,13 @@ base64 -d suspiciosString
 Once I was parsing-years-old my mommy told me
 make sure you work w/ python or you'll get lonely
 
-*From this phrase let's pick up some key words for reasearch*
+*From this phrase, let's pick up some keywords for reasearch*
 
-After some research I found a good article, which incate some invalid character to use https://charbase.com/d86e-unicode-invalid-character.
+A good reasearch could be *parsing w/ unicode bypass*
 
-I tried different value and I assume that the form could be exploited with "flag/ud88*", below an example:
+After a deep browse I found a good article, which describes some invalid character to use https://charbase.com/d86e-unicode-invalid-character.
+
+I tried different values and I assume that the form could be exploited with "flag/ud88*", below an example:
 
 ```
 curl -X POST "http://35.211.91.235:8000/" -H "Content-Type: application/json" -d '{ "file_name" : "flag\ud88A"}'
