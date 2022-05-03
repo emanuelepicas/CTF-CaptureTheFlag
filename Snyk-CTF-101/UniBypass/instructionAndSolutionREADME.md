@@ -62,7 +62,7 @@ This is the command that I will use to exploit the form, changing only the value
 
 
 ```
-$curl -X POST 35.211.91.235:8000/ -H "Content-Type : application/json" -d '{"file_name":"flag"}' 
+$curl -X POST 35.211.91.235:8000/ -H "Content-Type: application/json" -d '{"file_name":"flag"}' 
 
 ```
 
