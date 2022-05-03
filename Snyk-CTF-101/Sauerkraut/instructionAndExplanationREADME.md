@@ -1,10 +1,10 @@
 # Sauerkraut
 
-What goes best on a hotdog?
+What goes best on a hot dog?
 
 ## Objective
 
-There is a form page, in which, after a number of try with some string, we receive in output this string
+There is a form page, in which, after a number of tries with some string, we receive in output this string
 
 *Invalid base64-encoded string: number of data characters (13) cannot be 1 more than a multiple of 4*
 
@@ -24,9 +24,9 @@ This article has a similar case that could be helpful for us
 
 ## Solution
 
-Reading the article above could help us to understand how to pass the correct string to the form and run bash command on the target amachine.
+Reading the article above could help us to understand how to pass the correct string to the form and run bash command on the target machine.
 
-I made a small script script.py that could trasform all the command serializing them.
+I made a small script script.py that could transform all the command serializing them.
 
 These are the steps to take
 
