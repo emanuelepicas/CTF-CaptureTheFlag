@@ -68,7 +68,10 @@ $curl -X POST 35.211.91.235:8000/ -H "Content-Type: application/json" -d '{"file
 
 ***Response***
 
-{"response":"computer says no"}  or {"response":"it's not that simple"}                                                                                                      
+```
+{"response":"computer says no"}  or {"response":"it's not that simple"}   
+```
+
 Therefore, let's go for the second hint, a base64 encoded, commented string on the bottom of the page.
 
 
@@ -86,13 +89,13 @@ echo "T25jZSBJIHdhcyBwYXJzaW5nLXllYXJzLW9sZCBteSBtb21teSB0b2xkIG1lCm1ha2Ugc3VyZS
 
 
 base64 -d suspiciosString
-
-
 ```
 ***Results***
 
+```
 Once I was parsing-years-old my mommy told me
 make sure you work w/ python or you'll get lonely
+```
 
 *From this phrase, let's pick up some keywords for reasearch*
 
@@ -107,9 +110,9 @@ curl -X POST "http://35.211.91.235:8000/" -H "Content-Type: application/json" -d
 ```
 ***Results***
 
+```
 {"response":"SNYK{FLAG}"}
-
-
+```
 
 
 
