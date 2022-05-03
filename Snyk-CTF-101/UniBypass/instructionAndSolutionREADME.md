@@ -68,7 +68,7 @@ $curl -X POST 35.211.91.235:8000/ -H "Content-Type: application/json" -d '{"file
 
 ***Response***
 
-{"response":"computer says no"}                                                                                                        
+{"response":"computer says no"}  or {"response":"it's not that simple"}                                                                                                      
 Therefore, let's go for the second hint, a base64 encoded, commented string on the bottom of the page.
 
 
